@@ -1,0 +1,80 @@
+// Arrays
+//public static<T> list<T> asList(T... a) :no add and delete,can modify
+//public static<E> list<E> of(E... elements) : no add ,no delete,no modify
+//public static <E> Set<E> of(E... elements):  no add and delete  ,no modify method
+
+// 辅助
+// 1. psvm ->main()
+// 2. sout -> printf()
+// 3. ctrl+alt+space() ->tips
+
+//快捷键
+// ctrl+/             -> //
+// ctrl+shift+/       -> /**/
+// ctrl+alt +l        -> format
+// ctrl +d            -> copy line
+// ctrl +y            -> delete line
+// ctrl +B            -> see the source code
+// alt+shift+enter     -> import package
+// ctrl + n            -> search the class(file)
+
+// alt + 7             -> show the class  structure info
+// or menu: view->Tool windows->Structure   -> show the class structure info
+
+//导包
+// alt+enter    -> auto to add the padkage
+// ctrl+ alt+ V ->   the var name receive type
+
+// win: alt +Insert  -> 生成构造方法，get  set
+// mac：cmd +n
+
+// 继承中：私有不能被继承，子类中的访问权限可 >= 父类访问权限（public>default>private）
+// 静态成员方法只能访问静态成员（相当于类方法 - 实例方法区别）
+// 自动建包命令：javac -d . com.huse.cn test.java
+// 运行：java com.huse.cn test
+
+// 权限修饰符
+//修饰符      同一个类中    同一个包中子类无关类   不同包中子类    不同包的无关类
+//private      true
+//默认          true           true
+//protected    true           true              true
+//public       true           true              true            true
+
+// 多态
+//  成员变量：编译看左边，执行看边边
+//  成员方法：编译看左边，执行看右边
+//  因为成员方法有重写，而成员变量没有
+
+// 接口
+// 成员变量：是常量 默认修饰符：public static final
+// 构造方法：没有构造方法因为接口主要是对行为进行抽象的，是没有具体存在的
+// 一个类如果没有父类，默认继承自object类
+// 成员方法：只能是抽象方法，默认修饰符：public abstract
+
+// 类和接口关系：可以单实现，多实现，还可以在继承一个类的同时实现多个接口
+// 接口和接口的关系:可以单继承，也可以多继承
+// => 设计区别：抽象类对类进行抽像 包括属性和行为抽象,接口对行为抽象，主要是行为
+
+// 匿名内部类
+// 本质：是一个继承了该类或实现了该接口的子类匿名对象
+// 工具类的设计思想：构造方法用private修饰，成员用public static修饰
+
+// throws className
+
+// hashset ：自定义类，存入hashset,要重写hashCode() and equals()
+// 自然排序Comparable:
+//用TreeSet集合存储自定义对象，无参构造方法使用的的自然排序对元素排序的
+//自然排序，就是让元素所属的类实现Comparable接口，重写Comparable(To)方法
+//重写方法时，一定要注意排序规则必须按照要求的主要条件和次要条件来写
+
+
+
+CPU：intel i9-10900K 酷睿十核  		 ->2939
+主板：华硕 ROG MAXIMUS XII EXTREME 		 ->4299.00
+内存：芝奇皇家戟 3600频率 DDR4 内存条16GX4 	->￥3299.00
+硬盘：三星 970 PRO 1TB SSD固态硬盘 M.2接口（黑苹果系统盘）
+硬盘： 美商海盗船Force MP600 1TB SSD固态硬盘 PCI-E 4.0（Win10系统盘）
+电源：美商海盗船RM1000X 金牌/全模组电源
+显卡：华硕 ROG-STRIX-RX5700XT-O8G-GAMING OC
+散热：美商海盗船 H150i RGB PRO XT 水冷CPU散热器
+机箱：LIANLI 包豪斯-O11 黑色
