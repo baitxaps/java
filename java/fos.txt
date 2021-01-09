@@ -1,2 +1,19 @@
 
-aabcab
+git branch -r
+  origin/main
+  origin/master
+
+
+git remote -v
+master  https://github.com/baitxaps/java.git (fetch)
+master  https://github.com/baitxaps/java.git (push)
+origin  git@github.com:baitxaps/java.git (fetch)
+origin  git@github.com:baitxaps/java.git (push)
+
+See git-pull(1) for details.
+git pull <remote> <branch>
+If you wish to set tracking information for this branch you can do so with:
+    git branch --set-upstream-to=<remote>/<branch> master
+
+git branch --set-upstream-to=origin/master master
+Branch 'master' set up to track remote branch 'master' from 'origin'.

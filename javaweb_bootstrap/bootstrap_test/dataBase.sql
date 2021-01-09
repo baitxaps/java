@@ -1,3 +1,19 @@
+// DML DDL DCL DQL
+
+// rename password
+//stop servicc
+cmd->services.msc ->mysql ->stop
+//skip grant
+mysqld --skip-grant-tables
+// new cmd window
+mysql -u root -p // no input the password
+// rename password
+use mysql;
+update user set password = password('123456') where user='root';
+// kill mysqld 
+// reboot mysql service
+
+
 //0.login the database server
 mysql -u root -p  //-h :host -p:port
 
@@ -50,7 +66,7 @@ drop table user;
 //10.1   add to talbe column
 alter table user add image varchar(100);
 
-// 10.2 modify the column type , lengh 
+// 10.2 modify the column type , length 
 alter table user modify image varchar(150);
 
 //10.3 delete column
@@ -73,4 +89,26 @@ services.msc
 // 12 .insert  
 insert into user values(1,'孙小梅','123','2020-11-11',1);
 
-// 132.
+// 13 update
+update user set password='123',age=22 where username='aaa';
+
+//14.delete all data 
+delete from user;//DML, events restory => data:rollback;
+trunc table user;//DDL,delete the table and new table that the same struct as the table
+
+ //15. query _ or %
+ // query the english score contains of 88,90,100 
+ select *from exam where english in(88,90,100);
+ 
+ // create exam talbe
+ create table exam(
+ id int primary key auto_increment,
+ name varchar(20) unique,
+ english float,
+ chinese float,
+ math float
+ );
+ insert into exam values(1,'孙小梅',90,90,100);
+ 
+ select sum(english)+sum(chinese)+sum(math) from exam;
+  select sum(ifnull(english,0)+chinese+math) from exma;
