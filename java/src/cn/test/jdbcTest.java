@@ -1,13 +1,72 @@
 package cn.test;
 
+import cn.huse.HuseJDBCUtils;
+
 import java.sql.*;
 
 public class jdbcTest {
     //170
     public static void test() {
+        DBUtilsTest();
         // connect();
         // savaRecord();
-        query();
+        //query();
+    }
+
+    private static boolean login(String username, String password) {
+        // username = "aaaa' or '1=1"  password = "aaaaa";
+        // username = "aaaa' -- "
+       // Boolean l = login(username,password)
+
+        String sql = "select * from user where username = '" + username + "' and password= '" + password + "'";
+
+        // sql = "select * from user where username = 'aaaa or '1=1 ' and password= 'aaaaa'";
+        // sql = "select * from user where username = 'aaaa'-- ' and password= 'aaaaa'";
+        boolean islogin = false;
+
+        // 防止sql注入：
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        try {
+            conn = HuseJDBCUtils.getConnection();
+            sql = "select * from user where username= ? and password = ?";
+            pstmt = conn.prepareStatement(sql);
+
+            // set paramters
+            pstmt.setString(1,username);
+            pstmt.setString(2,password);
+
+            rs = pstmt.executeQuery();
+            if(rs.next()) {
+             islogin = true;
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            HuseJDBCUtils.release(rs,pstmt,conn);
+        }
+        return islogin;
+    }
+
+    private static void DBUtilsTest() {
+        Connection conn = null;
+        Statement stms = null;
+        ResultSet rs = null;
+        try {
+            conn = HuseJDBCUtils.getConnection();
+            stms = conn.createStatement();
+            String sql = "select * from user";
+            rs = stms.executeQuery(sql);
+            while (rs.next()) {
+                System.out.println(rs.getInt("id") + " " + rs.getString("username"));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            HuseJDBCUtils.release(rs, stms, conn);
+        }
     }
 
     private static void query() {
