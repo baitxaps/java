@@ -109,6 +109,33 @@ trunc table user;//DDL,delete the table and new table that the same struct as th
  math float
  );
  insert into exam values(1,'孙小梅',90,90,100);
- 
  select sum(english)+sum(chinese)+sum(math) from exam;
-  select sum(ifnull(english,0)+chinese+math) from exma;
+ select sum(ifnull(english,0)+chinese+math) from exma;
+ 
+ // 16. visual tool :sqlyog
+ create table dept(
+ 	did int primary key auto_increment,
+ 	dname varchar(20)
+ );
+ insert into dept values (null,'市场部');
+ insert into dept values (null,'人事部');
+ insert into dept values (null,'教研部');
+ create table employee(
+ 	eid int primary key auto_increment,
+ 	ename varchar(20),
+ 	salary double,
+ 	birthday date,
+ 	sex varchar(10),
+ 	dno int
+ );
+ 
+ alter table employee modify dno int not null;
+ 
+ insert into employee values (null,'张三',8000,'1988-09-01','男',3);
+ insert into employee values (null,'李四',9000,'1988-09-01','男',1);
+ insert into employee values (null,'王五',6000,'1988-09-01','男',2);
+ insert into employee values (null,'赵六',10000,'1988-09-01','男',3);
+ insert into employee values (null,'孙七',10000,'1988-09-01','男',1);
+ //insert into employee values (null,'田八',10000,'1988-09-01','男',null);
+ delete from dept where did = 2;
+ alter table employee add foreign key (dno) references dept(did);

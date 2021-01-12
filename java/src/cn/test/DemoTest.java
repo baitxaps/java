@@ -7,7 +7,11 @@ import java.util.Scanner;
 // r:397
 public class DemoTest {
     public static void main(String[] args) {
-        HuseReflection.test();
+        try {
+           jdbcTest.test();
+        }catch (Exception e){}
+
+       // HuseReflection.test();
         //HuseLambda.lambda();
         //HuseThread.runableTest();
         //HuseThread.threadRun();
