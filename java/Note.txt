@@ -67,7 +67,8 @@
 //自然排序，就是让元素所属的类实现Comparable接口，重写Comparable(To)方法
 //重写方法时，一定要注意排序规则必须按照要求的主要条件和次要条件来写
 
-
+url=jdbc:mysql://localhost:3306/web_data
+url=jdbc:mysql://localhost:3306/batch?rewriteBatchedStatements=true
 
 CPU：intel i9-10900K 酷睿十核  		 ->2939
 主板：华硕 ROG MAXIMUS XII EXTREME 		 ->4299.00

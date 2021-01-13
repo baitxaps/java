@@ -9,7 +9,9 @@ public class DemoTest {
     public static void main(String[] args) {
         try {
            jdbcTest.test();
-        }catch (Exception e){}
+        }catch (Exception e){
+            e.printStackTrace();
+        }
 
        // HuseReflection.test();
         //HuseLambda.lambda();
