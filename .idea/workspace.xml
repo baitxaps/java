@@ -220,15 +220,15 @@
       <workItem from="1610635628038" duration="892000" />
       <workItem from="1610636570400" duration="2437000" />
       <workItem from="1610639072425" duration="10000" />
-      <workItem from="1610715644758" duration="3088000" />
+      <workItem from="1610715644758" duration="3516000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6427000" />
+    <option name="totallyTimeSpent" value="6855000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="133" y="88" width="1122" height="746" extended-state="0" />
+    <frame x="415" y="431" width="1122" height="746" extended-state="0" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -240,7 +240,7 @@
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32329637" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.47068146" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
@@ -417,7 +417,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited />
+          <last-edited>No facets are configured</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
