@@ -1,6 +1,6 @@
 package cn.huse;
 
-import cn.test.*;
+import entity.Person;
 
 import java.util.ArrayList;
 import java.util.function.Function;

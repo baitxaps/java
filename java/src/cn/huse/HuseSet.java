@@ -1,6 +1,6 @@
 package cn.huse;
 
-import cn.test.Student;
+import entity.Student;
 
 import java.util.*;
 

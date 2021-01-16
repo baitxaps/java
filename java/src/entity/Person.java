@@ -1,4 +1,4 @@
-package cn.test;
+package entity;
 
 import java.io.Serializable;
 

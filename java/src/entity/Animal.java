@@ -1,4 +1,4 @@
-package cn.test;
+package entity;
 
 public class Animal {
 }

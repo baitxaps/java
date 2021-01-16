@@ -1,7 +1,6 @@
 package cn.huse;
 
-import cn.test.Person;
-import cn.test.Student;
+import entity.Person;
 
 import java.io.*;
 import java.util.ArrayList;

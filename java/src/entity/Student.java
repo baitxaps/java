@@ -1,8 +1,6 @@
-package cn.test;
+package entity;
 
-import java.io.Serializable;
-
-public class Student extends Person  {
+public class Student extends Person {
     public Student() {
         //no instance
     }

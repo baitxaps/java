@@ -1,4 +1,4 @@
-package cn.test;
+package cn.huse;
 
 public interface HusePrinter {
     void printUpperCase(String s);

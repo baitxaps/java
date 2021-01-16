@@ -1,4 +1,4 @@
-package cn.huse;
+package cn.jdbc;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -22,7 +22,7 @@ public class HuseJDBCUtils {
     static {
         Properties properties = new Properties();
         try {
-            properties.load(new FileInputStream("src/cn/huse/db.properties"));
+            properties.load(new FileInputStream("src/cn/jdbc/db.properties"));
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -54,14 +54,14 @@ public class HuseJDBCUtils {
         return conn;
     }
 
-    public static void release(Statement stms, Connection conn) {
-        if (stms != null) {
+    public static void release(Statement stmst, Connection conn) {
+        if (stmst != null) {
             try {
-                stms.close();
+                stmst.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            stms = null;
+            stmst = null;
         }
         if (conn != null) {
             try {
@@ -73,7 +73,7 @@ public class HuseJDBCUtils {
         }
     }
 
-    public static void release(ResultSet rs, Statement stms, Connection conn) {
+    public static void release(ResultSet rs, Statement stmt, Connection conn) {
         if (rs != null) {
             try {
                 rs.close();
@@ -83,13 +83,13 @@ public class HuseJDBCUtils {
             rs = null;
         }
 
-        if (stms != null) {
+        if (stmt != null) {
             try {
-                stms.close();
+                stmt.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            stms = null;
+            stmt = null;
         }
 
         if (conn != null) {

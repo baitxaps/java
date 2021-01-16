@@ -1,8 +1,7 @@
 package cn.huse;
 
-import cn.test.Student;
+import entity.Student;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.lang.reflect.Constructor;
@@ -33,7 +32,7 @@ public class HuseReflection {
         Class<? extends Student> c2 = s.getClass();
         System.out.println(st == c2);
 
-        Class<?> Person = Class.forName("cn.test.Person");
+        Class<?> Person = Class.forName("entity.Person");
         System.out.println(st == Person);
 
         //1. get constructor

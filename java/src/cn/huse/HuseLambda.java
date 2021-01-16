@@ -1,7 +1,5 @@
 package cn.huse;
 
-import cn.test.HuseReqAPI;
-
 /*
 类型不同
 匿名内部类：可以是接口，抽象类，具体类

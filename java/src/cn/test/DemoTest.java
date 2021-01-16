@@ -1,5 +1,7 @@
 package cn.test;
 import cn.huse.*;
+import entity.Animal;
+import entity.Student;
 
 import java.io.IOException;
 import java.util.Scanner;

@@ -1,7 +1,5 @@
 package cn.huse;
 
-import cn.test.HuseReqAPI;
-
 public class HuseAPIHuse implements HuseReqAPI {
     @Override
     public void reqAPI() {

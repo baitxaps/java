@@ -1,6 +1,6 @@
 package cn.test;
 
-import cn.huse.HuseJDBCUtils;
+import cn.jdbc.HuseJDBCUtils;
 
 import java.sql.*;
 

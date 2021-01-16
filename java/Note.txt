@@ -28,6 +28,10 @@
 // win: alt +Insert  -> 生成构造方法，get  set
 // mac：cmd +n
 
+//IDEA中三种快速实现接口的快捷键:
+ctrl+0,ctrl+l,alt+enter
+
+
 // 继承中：私有不能被继承，子类中的访问权限可 >= 父类访问权限（public>default>private）
 // 静态成员方法只能访问静态成员（相当于类方法 - 实例方法区别）
 // 自动建包命令：javac -d . com.huse.cn test.java
@@ -69,6 +73,12 @@
 
 url=jdbc:mysql://localhost:3306/web_data
 url=jdbc:mysql://localhost:3306/batch?rewriteBatchedStatements=true
+https://segmentfault.com/a/1190000020600546?utm_source=tag-newest
+
+// never used提示
+https://blog.csdn.net/chenchunlin526/article/details/86263457
+//去掉错误拼写检查提示
+//spelling
 
 CPU：intel i9-10900K 酷睿十核  		 ->2939
 主板：华硕 ROG MAXIMUS XII EXTREME 		 ->4299.00

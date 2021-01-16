@@ -1,4 +1,4 @@
-package cn.test;
+package cn.huse;
 
 public interface HuseReqAPI {
     public void reqAPI();
