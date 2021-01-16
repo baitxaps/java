@@ -1,11 +1,8 @@
 package cn.test;
-
 import cn.jdbc.HuseJDBCUtils;
-
 import java.sql.*;
 
-public class jdbcTest {
-    //170
+public class jdbcTes_Bak {
     public static void test() {
         //jdbcCurd();
         // DBUtilsTest();
@@ -14,7 +11,7 @@ public class jdbcTest {
         //query();
         //jdbcBatch2();
         //jdbcBatch();
-        jdbcTransaction();//185
+        jdbcTransaction();
     }
 
     private static void jdbcTransaction() {
@@ -305,14 +302,5 @@ public class jdbcTest {
         statement.close();
         conn.close();
     }
+
 }
-
-
-
-
-
-
-
-
-
-

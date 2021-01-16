@@ -1,57 +1,20 @@
 package cn.jdbc;
-
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import com.mchange.v2.c3p0.ComboPooledDataSource;
+import javax.sql.DataSource;
 import java.sql.*;
-import java.util.Properties;
 
 public class HuseJDBCUtils {
-    private static final String driverClassName;
-    private static final String url;
-    private static final String username;
-    private static final String password;
+    // A static connectionPool ,to run only 1 exec
+    private static final ComboPooledDataSource dataSource = new ComboPooledDataSource();
 
-//    static {
-//        driverClassName = "com.mysql.jdbc.Driver";
-//        url = "jdbc:mysql://localhost:3306/web_data";
-//        username = "root";
-//        password = "123456";
-//    }
-
-    static {
-        Properties properties = new Properties();
-        try {
-            properties.load(new FileInputStream("src/cn/jdbc/db.properties"));
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        driverClassName = properties.getProperty("driverClassName");
-        url = properties.getProperty("url");
-        username = properties.getProperty("username");
-        password = properties.getProperty("password");
+    // Get connectionPool method
+    public static Connection getConnection()throws SQLException {
+        return dataSource.getConnection();
     }
 
-    public static void loadDriver() {
-        try {
-            Class.forName(driverClassName);
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public static Connection getConnection() {
-        Connection conn = null;
-        try {
-            loadDriver();
-            conn = DriverManager.getConnection(url, username, password);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return conn;
+    // Get the connectionPool
+    public static DataSource getDataSource(){
+        return dataSource;
     }
 
     public static void release(Statement stmst, Connection conn) {

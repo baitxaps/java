@@ -1,4 +1,5 @@
 package cn.jdbc;
+import cn.jdbc_bak.HuseJDBCUtils_Bak;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -10,11 +11,10 @@ import java.io.PrintWriter;
 import java.util.logging.Logger;
 
 public class HuseJDBCDataSource implements DataSource {
-
     private List<Connection> connList = new ArrayList<Connection>();
     public HuseJDBCDataSource() {
         for (int i=1;i<=3;i++){
-            connList.add(HuseJDBCUtils.getConnection());
+            connList.add(HuseJDBCUtils_Bak.getConnection());
         }
     }
 

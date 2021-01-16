@@ -2,15 +2,13 @@ package cn.test;
 import cn.huse.*;
 import entity.Animal;
 import entity.Student;
-
 import java.io.IOException;
 import java.util.Scanner;
 
-// r:397
-public class DemoTest {
+public class EntityTest {
     public static void main(String[] args) {
         try {
-           jdbcTest.test();
+           jdbcTes_Bak.test();
         }catch (Exception e){
             e.printStackTrace();
         }
