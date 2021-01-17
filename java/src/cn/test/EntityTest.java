@@ -7,16 +7,16 @@ import java.util.Scanner;
 
 public class EntityTest {
     public static void main(String[] args) {
-        try {
-           jdbcTes_Bak.test();
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+//        try {
+//           jdbcTes_Bak.test();
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
 
        // HuseReflection.test();
         //HuseLambda.lambda();
         //HuseThread.runableTest();
-        //HuseThread.threadRun();
+        HuseThread.threadRun();
     }
 
     public static void arrlist() {

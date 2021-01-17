@@ -3,7 +3,7 @@
 //public static<E> list<E> of(E... elements) : no add ,no delete,no modify
 //public static <E> Set<E> of(E... elements):  no add and delete  ,no modify method
 
-// 辅助
+// 辅助 208
 // 1. psvm ->main()
 // 2. sout -> printf()
 // 3. ctrl+alt+space() ->tips
@@ -79,6 +79,46 @@ https://segmentfault.com/a/1190000020600546?utm_source=tag-newest
 https://blog.csdn.net/chenchunlin526/article/details/86263457
 //去掉错误拼写检查提示
 //spelling
+
+//web server:
+Tomcat,webSphere,webLogic,IIS,Apache
+Tomcat		：Apache组织提供的一个开源的免费的web服务器。满足EE的Serlet和JSP的规范。
+WebSphere	：IBM公司开发的一个收费的大型web服务器。满足了EE开发的所有规范。
+WebLogic	：BEA公司开发的一个收费的大型web服务器。满足了EE开发的所有规范。
+IIS			：应用在.NET平台上。
+Apache		：应用在PHP平台上。
+
+静态web资源:HTML/CSS/JS
+动态web资源:Servlet、JSP、PHP、ASP
+
+path:C:\Program Files\Apache Software Foundation\Tomcat 7.0\bin
+动态WEB资源目录结构
+website
+	|------静态页面（HTML、CSS、JS、图片）
+	|------JSP页面
+	|------WEB-INF
+			|-----web.xml	（必须的）
+			|-----classes	（可选的）
+			|-----lib		（可选的）
+
+Tomcat项目发布的方式
+1：直接将项目复制到tomcat/webapps下; =>http://localhost:8080/test/index.html
+
+2：在tomcat/conf/server.xml配置tomcat的虚拟路径
+path:C:\Program Files\Apache Software Foundation\Tomcat 7.0\conf/server.xml->
+<Context path="/rhc" docBase ="C:\web_page"></Context>
+
+
+3：在tomcat/conf/Catalina/localhost/下配置tomcat的虚拟路径  =>better.
+path: C:\Program Files\Apache Software Foundation\Tomcat 7.0\conf\Catalina\localhost\huse.xml
+
+huse.xml:
+<?xml version='1.0' encoding='utf-8'?>
+<Context docBase ="C:\web_page"></Context>
+
+access url:
+http://localhost:8080/huse/
+
 
 CPU：intel i9-10900K 酷睿十核  		 ->2939
 主板：华硕 ROG MAXIMUS XII EXTREME 		 ->4299.00
