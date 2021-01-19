@@ -14,19 +14,42 @@
         <welcome-file>default.jsp</welcome-file>
     </welcome-file-list>
 
+    <!--global init paramters to config-->
+    <context-param>
+        <param-name>username</param-name>
+        <param-value>root</param-value>
+    </context-param>
+    <context-param>
+        <param-name>password</param-name>
+        <param-value>123</param-value>
+    </context-param>
+
     <!-- config the Servlet -->
     <servlet>
         <!--config the Servlet name-->
         <servlet-name>HuseServlet</servlet-name>
         <!--config the full of Servlet path-->
         <servlet-class>com.huse.cn.HuseServlet</servlet-class>
+        <!--config start to init and loading-->
+        <load-on-startup>2</load-on-startup>>
+
     </servlet>
     <!--config the Servlet map-->
     <servlet-mapping>
         <!--config the Servlet name-->
         <servlet-name>HuseServlet</servlet-name>
+
         <!--config access  path-->
-        <url-pattern>/hello</url-pattern>
+        <!--优先级：完全路径匹配 > 目录匹配  > 扩展名匹配 -->
+
+        <!--完全路径匹配 以/开始 eg: /ServletD1 , /aaa/ServletDem1 -->
+        <!--<url-pattern>/hello</url-pattern>-->
+        <!--目录匹配 以开始/, 以结束/*  eg:/* ,   /aaa/* , /aaa/bbb/*   -->
+        <!--<url-pattern>/folder/*</url-pattern>-->
+
+        <!--扩展名匹配 不能以/开始，以*开始 eg：*.action , *.do ,  *.jsp -->
+        <url-pattern>*.html</url-pattern>
+
     </servlet-mapping>
 
 
@@ -36,6 +59,17 @@
         <servlet-name>ServletHttp</servlet-name>
         <!--config the full of Servlet path-->
         <servlet-class>com.huse.http.ServletHttp</servlet-class>
+
+        <!--init paramster to config-->
+        <init-param>
+            <param-name>username</param-name>
+            <param-value>root</param-value>
+        </init-param>
+        <init-param>
+            <param-name>password</param-name>
+            <param-value>123456</param-value>
+        </init-param>
+
     </servlet>
     <!--config the Servlet map-->
     <servlet-mapping>

@@ -12,7 +12,7 @@ public class HuseServlet implements Servlet {
 
     @Override
     public void init(ServletConfig servletConfig) throws ServletException {
-
+        System.out.println("init....");
     }
 
     @Override
