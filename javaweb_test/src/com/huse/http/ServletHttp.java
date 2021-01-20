@@ -13,24 +13,51 @@ import java.util.Enumeration;
 import java.util.Properties;
 
 public class ServletHttp extends HttpServlet {
+    // File → Settings → Editor → Inspections
+    //search : Duplicated Code
     private void test1() throws IOException {
         Properties properties = new Properties();
         InputStream is0 = new FileInputStream("classes/db.properties"); //tomcat /bin
-        InputStream is1 = this.getServletContext().getResourceAsStream("/WEB-INF/classes/db.properties");
-       // path: //tomcat/webapps/WEB-INF/classes/db.proterties
-        String path = this.getServletContext().getRealPath("/WEB-INF/classes/db.properties");
         properties.load(is0);
 
         String driverClassName = properties.getProperty("driverClassName");
         String url = properties.getProperty("url");
         String username = properties.getProperty("username");
         String password = properties.getProperty("password");
-        System.out.println(driverClassName);
+        System.out.println(driverClassName + url + username + password);
+    }
+
+    private void test2() throws IOException {
+        Properties properties = new Properties();//webapps\manager\WEB-INF\classes
+        InputStream is = this.getServletContext().getResourceAsStream("/WEB-INF/classes");
+        // path: //tomcat/webapps/WEB-INF/classes/db.properties
+        properties.load(is);
+
+        String driverClassName = properties.getProperty("driverClassName");
+        String url = properties.getProperty("url");
+        String username = properties.getProperty("username");
+        String password = properties.getProperty("password");
+        System.out.println(driverClassName + url + username + password);
+    }
+
+    private void test3() throws IOException {
+        Properties properties = new Properties();
+        String path = this.getServletContext().getRealPath("/WEB-INF/classes/db.properties");
+        System.out.println(path);
+        InputStream is = new FileInputStream(path);
+        properties.load(is);
+
+        String driverClassName = properties.getProperty("driverClassName");
+        String url = properties.getProperty("url");
+        String username = properties.getProperty("username");
+        String password = properties.getProperty("password");
+        System.out.println(driverClassName + url + username + password);
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-       // resp.getWriter().println("servlet Http Do doGet...");
+         resp.getWriter().println("servlet Http Do doGet...");
+        test3();
 
         ServletConfig config = this.getServletConfig();
         String username = config.getInitParameter("username");
@@ -38,7 +65,7 @@ public class ServletHttp extends HttpServlet {
         System.out.println(username +"  " + password);
         //doPost(req,resp);
 
-        // get all Paramters
+        // get all parameters
         Enumeration<String> names = config.getInitParameterNames();
         while (names.hasMoreElements()){
             String name = names.nextElement();
@@ -60,7 +87,7 @@ public class ServletHttp extends HttpServlet {
         String path = servletContext.getContextPath();
         System.out.println(path);
 
-        //get global paramters
+        //get global parameters
         String globalusername = servletContext.getInitParameter("username");
         String globalpassword = servletContext.getInitParameter("password");
         System.out.println(globalpassword + "  " + globalusername);
@@ -72,7 +99,7 @@ public class ServletHttp extends HttpServlet {
         }
 
         // get the  file of  web program
-        test1();
+
     }
 
     @Override
@@ -82,30 +109,4 @@ public class ServletHttp extends HttpServlet {
 }
 //228
 
-//#if (${PACKAGE_NAME} && ${PACKAGE_NAME} != "")package ${PACKAGE_NAME};#end
-//        #parse("File Header.java")
-//@javax.servlet.annotation.WebServlet(name = "${Entity_Name}")
-//public class ${Class_Name} extends javax.servlet.http.HttpServlet {
-//protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {
-//
-//        }
-//
-//protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {
-//
-//        }
-//        }
 
-
-//#if (${PACKAGE_NAME} && ${PACKAGE_NAME} != "")package ${PACKAGE_NAME};#end
-//        #parse("File Header.java")
-//@javax.servlet.annotation.WebServlet(name = "${Entity_Name}", urlPatterns="/${Entity_Name}")
-//public class ${Class_Name} extends javax.servlet.http.HttpServlet {
-//protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {
-//        request.setCharacterEncoding("utf-8");
-//        response.setContentType("text/html;charset=utf-8");
-//        }
-//
-//protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {
-//        request.setCharacterEncoding("utf-8");
-//        }
-//        }
