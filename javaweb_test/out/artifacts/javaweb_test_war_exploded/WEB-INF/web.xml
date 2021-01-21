@@ -14,7 +14,7 @@
         <welcome-file>default.jsp</welcome-file>
     </welcome-file-list>
 
-    <!--global init paramters to config-->
+    <!--global init parameters to config-->
     <context-param>
         <param-name>username</param-name>
         <param-value>root</param-value>
@@ -60,7 +60,7 @@
         <!--config the full of Servlet path-->
         <servlet-class>com.huse.http.ServletHttp</servlet-class>
 
-        <!--init paramster to config-->
+        <!--init parameters to config-->
         <init-param>
             <param-name>username</param-name>
             <param-value>root</param-value>

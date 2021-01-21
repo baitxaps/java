@@ -17,7 +17,7 @@ public class ServletHttp extends HttpServlet {
     //search : Duplicated Code
     private void test1() throws IOException {
         Properties properties = new Properties();
-        InputStream is0 = new FileInputStream("classes/db.properties"); //tomcat /bin
+        InputStream is0 = new FileInputStream("/classes/db.properties"); //tomcat /bin
         properties.load(is0);
 
         String driverClassName = properties.getProperty("driverClassName");
@@ -28,9 +28,8 @@ public class ServletHttp extends HttpServlet {
     }
 
     private void test2() throws IOException {
-        Properties properties = new Properties();//webapps\manager\WEB-INF\classes
-        InputStream is = this.getServletContext().getResourceAsStream("/WEB-INF/classes");
-        // path: //tomcat/webapps/WEB-INF/classes/db.properties
+        Properties properties = new Properties();
+        InputStream is = this.getServletContext().getResourceAsStream("/WEB-INF/classes/db.properties");
         properties.load(is);
 
         String driverClassName = properties.getProperty("driverClassName");
@@ -57,7 +56,7 @@ public class ServletHttp extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
          resp.getWriter().println("servlet Http Do doGet...");
-        test3();
+        test2();
 
         ServletConfig config = this.getServletConfig();
         String username = config.getInitParameter("username");
@@ -108,5 +107,13 @@ public class ServletHttp extends HttpServlet {
     }
 }
 //228
+/*
+1.disconnected no supported authentication methods available(server sent: publickey)
+or git did not exit cleanly (exit code 1)
+or git did not exit cleanly (exit code 128)
+多半是因为git和小乌龟有冲突。
+2. 右键:小乌龟—settings->network->修改ssh client为git的ssh.exe
+(setup path: Git->usr->bin->ssh.exe)
+*/
 
 
