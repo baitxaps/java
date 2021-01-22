@@ -1,3 +1,0 @@
-className=entity.Person
-methodName=toString
-
