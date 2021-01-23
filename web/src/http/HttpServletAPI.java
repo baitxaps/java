@@ -11,7 +11,7 @@ import java.io.InputStream;
 import java.util.Enumeration;
 import java.util.Properties;
 
-public class SubHttpServlet extends javax.servlet.http.HttpServlet {
+public class HttpServletAPI extends javax.servlet.http.HttpServlet {
     // File → Settings → Editor → Inspections
     // search : Duplicated Code
 
@@ -22,25 +22,38 @@ public class SubHttpServlet extends javax.servlet.http.HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.getWriter().println("SubHttpServlet Do doGet...");
+        resp.getWriter().println("HttpServletAPI Do doGet...");
         String name = (String) this.getServletContext().getAttribute("name");
         System.out.println("name:" + name);
 
-        // test2();
-        resp.setStatus(302);
-        resp.setHeader("Location","/scope");
-/*
+        test2();
+        /*
+        200:OK
+        302:redirect
+        304:search local cache data
+        404:req  resource to return not exist
+        500:server internal error
+
         重定向因为是从客户端发来的，所以只知道发到那个服务器，不知道发给那个项目，
         所以重定向的"/"表示"http:服务器ip:8080/"
         请求转发因为服务器内部自己转发，因此知道发给那个项目，
         所以请求转发的"/"表示"http:服务器ip:8080/项目名/"
         重定向没有"/"表示在当前目录，请求转发没有"/"表示相对于当前资源的相对路径
-*/
+        */
+
+        // redirect to new page
+//      resp.setStatus(302);
+//      resp.setHeader("Location", "/scope"); //or resp.sendRedirect("/scope");
+
+        resp.setContentType("text/html;charset=UTF-8");
+        resp.getWriter().println("5s to jump to next page");
+        resp.setHeader("Refresh","5;url=/scope");
     }
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.getWriter().println("SubHttpServlet Do post...");
-        doGet(req,resp);
+        resp.getWriter().println("HttpServletAPI Do post...");
+        doGet(req, resp);
     }
 
     private void test1() throws IOException {
@@ -56,8 +69,9 @@ public class SubHttpServlet extends javax.servlet.http.HttpServlet {
     }
 
     private void test2() throws IOException {
+        // db.properties 要放在 src根目录下
         Properties properties = new Properties();
-        InputStream is = this.getServletContext().getResourceAsStream("/WEB-INF/classes/db.properties");
+        InputStream is = this.getServletContext().getResourceAsStream("WEB-INF/classes/db.properties");
         properties.load(is);
 
         String driverClassName = properties.getProperty("driverClassName");
@@ -124,8 +138,7 @@ public class SubHttpServlet extends javax.servlet.http.HttpServlet {
 }
 
 
-//228
-/*
+/* warning
 1.disconnected no supported authentication methods available(server sent: publickey)
 or git did not exit cleanly (exit code 1)
 or git did not exit cleanly (exit code 128)
@@ -133,33 +146,3 @@ or git did not exit cleanly (exit code 128)
 2. 右键:小乌龟—settings->network->修改ssh client为git的ssh.exe
 (setup path: Git->usr->bin->ssh.exe)
 */
-
-
-//<servlet>
-//<servlet-name>ScopeServlet</servlet-name>
-//<servlet-class>com.huse.scope.ScopeServlet</servlet-class>
-//<init-param>
-//<param-name>username</param-name>
-//<param-value>root</param-value>
-//</init-param>
-//<init-param>
-//<param-name>password</param-name>
-//<param-value>123456</param-value>
-//</init-param>
-//</servlet>
-//<servlet-mapping>
-//<servlet-name>ScopeServlet</servlet-name>
-//<url-pattern>/scope</url-pattern>
-//</servlet-mapping>
-//
-//protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        resp.getWriter().println("ScopeServlet Do doPost...");
-//        String name = (String)this.getServletContext().getAttribute("name");
-//        System.out.println(name);
-//        }
-//
-//protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        this.doPost(req, resp);
-//        }
-//        }
-

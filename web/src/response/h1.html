@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Refresh" content="5,url=/web/response/h2.html">
+    <title>Title</title>
+    <script type="text/javascript">
+       var i = 5;
+       function load(){
+           window.setInterval("changeSeconds()",1000);
+       }
+       function changeSeconds() {
+         i--;
+         document.getElementById("span1").innerHTML = i;
+       }
+    </script>
+</head>
+<body onload="load()">
+<h1>h1.html</h1>
+<h3>the page will be <span id="span1">5</span> s jump to h2.html</h3>
+</body>
+</html>
+
+
+<!--http://localhost:63342/web/response/resp1.html-->
+<!--http://localhost:63342/web/response/resp2.html-->

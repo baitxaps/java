@@ -24,6 +24,7 @@
         <param-value>123</param-value>
     </context-param>
 
+    <!--request-->
     <!-- config the Servlet -->
     <servlet>
         <!--config the Servlet name-->
@@ -48,13 +49,12 @@
         <url-pattern>*.html</url-pattern>
     </servlet-mapping>
 
-
     <!-- config the Servlet -->
     <servlet>
         <!--config the Servlet name-->
-        <servlet-name>SubHttpServlet</servlet-name>
+        <servlet-name>HttpServletAPI</servlet-name>
         <!--config the full of Servlet path-->
-        <servlet-class>http.SubHttpServlet</servlet-class>
+        <servlet-class>http.HttpServletAPI</servlet-class>
         <!--init parameters to config-->
         <init-param>
             <param-name>username</param-name>
@@ -68,11 +68,10 @@
     <!--config the Servlet map-->
     <servlet-mapping>
         <!--config the Servlet name-->
-        <servlet-name>SubHttpServlet</servlet-name>
+        <servlet-name>HttpServletAPI</servlet-name>
         <!--config access  path-->
-        <url-pattern>/sub</url-pattern>
+        <url-pattern>/api</url-pattern>
     </servlet-mapping>
-
 
     <servlet>
         <servlet-name>ScopeServlet</servlet-name>
@@ -89,6 +88,24 @@
     <servlet-mapping>
         <servlet-name>ScopeServlet</servlet-name>
         <url-pattern>/scope</url-pattern>
+    </servlet-mapping>
+
+    <!--response-->
+    <servlet>
+        <servlet-name>ResponseServlet</servlet-name>
+        <servlet-class>response.ResponseServlet</servlet-class>
+        <init-param>
+            <param-name>username</param-name>
+            <param-value>root</param-value>
+        </init-param>
+        <init-param>
+            <param-name>password</param-name>
+            <param-value>123456</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ResponseServlet</servlet-name>
+        <url-pattern>/resp</url-pattern>
     </servlet-mapping>
 
     <!--idea 2018 使用servlet模板-->
