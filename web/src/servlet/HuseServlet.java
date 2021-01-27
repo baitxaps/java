@@ -6,7 +6,7 @@ public class HuseServlet implements Servlet {
 
     @Override
     public void service(ServletRequest req, ServletResponse resp) throws ServletException, IOException {
-        resp.getWriter().println("hello Servlet...");
+        resp.getWriter().println("hello ServletRequest...");
     }
 
     @Override

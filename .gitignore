@@ -24,6 +24,13 @@
 dbg
 dgb/
 out
-
+log/
+metadata
+.metadata
+.settings
+build
+.classpath
+.project
+Servers
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*

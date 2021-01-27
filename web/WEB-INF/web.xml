@@ -94,18 +94,10 @@
     <servlet>
         <servlet-name>ResponseServlet</servlet-name>
         <servlet-class>response.ResponseServlet</servlet-class>
-        <init-param>
-            <param-name>username</param-name>
-            <param-value>root</param-value>
-        </init-param>
-        <init-param>
-            <param-name>password</param-name>
-            <param-value>123456</param-value>
-        </init-param>
     </servlet>
     <servlet-mapping>
         <servlet-name>ResponseServlet</servlet-name>
-        <url-pattern>/resp</url-pattern>
+        <url-pattern>/ResponseServlet</url-pattern>
     </servlet-mapping>
 
     <!--idea 2018 使用servlet模板-->
