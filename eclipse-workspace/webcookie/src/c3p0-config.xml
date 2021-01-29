@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <c3p0-config>
+
     <default-config>
         <property name="driverClass">com.mysql.jdbc.Driver</property>
         <property name="jdbcUrl">jdbc:mysql:///web_data</property>
         <property name="user">root</property>
         <property name="password">123456</property>
     </default-config>
-
+    
     <named-config name="oracle">
         <property name="driverClass">com.mysql.jdbc.Driver</property>
         <property name="jdbcUrl">jdbc:mysql://localhost:3306/web_data?characterEncoding=utf8</property>
@@ -14,7 +15,7 @@
         <property name="password">123456</property>
         <property name="initialPoolSize">5</property>
         <property name="maxPoolSize">10</property>
-        <property name="checkoutTimeout">3000</property>
+        <property name="checkoutTimeout">30000</property>
     </named-config>
 </c3p0-config>
 
