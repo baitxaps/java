@@ -1,0 +1,13 @@
+
+//------------------
+生成set get快捷键 :Shift+Alt+s ,generater getter and setter
+格式化代码的快捷键是Ctrl+Shift+F
+在当前行之上插入一行快捷键: Ctrl + Shift + Enter
+在当前行之下插入一行快捷键: Shift + Enter
+导入相应的包:ctrl+shift+M/Ctrl+Shift+o/Ctrl+1, 其中Ctrl+1只是快速修复
+System.out.println: syso -> alt+/
+
+先码出需要实现的接口:ctrl+1
+快速复制一行代码到下一行,点击一行任意位置,然后Ctrl+alt+下方向键
+快速移动一行到上一行的上面或者下一行的下面,点击一行任意位置,然后alt+上方向键或者下方向键
+
