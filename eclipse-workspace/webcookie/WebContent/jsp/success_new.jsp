@@ -9,5 +9,8 @@
 <body>
 <!-- http://localhost:8080/webcookie/jsp/success_new.jsp -->
 <h1>login success! welcome :${ existUser.username }</h1>
+
+<!-- project path:pageContext.request.contextPath -->
+<a href="${ pageContext.request.contextPath }/jsp/sub.jsp">提交数据</a>
 </body>
 </html>
