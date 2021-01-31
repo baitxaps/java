@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<!-- http://localhost:8080/webcookie/jsp/success_new.jsp -->
 <h1>login success! welcome :${ existUser.username }</h1>
 </body>
 </html>

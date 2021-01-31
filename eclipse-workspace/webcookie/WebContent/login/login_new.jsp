@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+<!-- http://localhost:8080/webcookie/login/login_new.jsp -->
+
 	<h1>login</h1>
 	<h3><font color="red">${ msg }</font></h3>
 	<form action="${ pageContext.request.contextPath }/UserServlet" method="post">
