@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import cn.huse.utils.DownloadUtils;
 
 /*
- tomcat由7.0.65升级到7.0.104后出现该问题
+tomcat由7.0.65升级到7.0.104后出现该问题
 java.lang.IllegalArgumentException：
 在请求目标中找到无效字符。有效字符在RFC 7230和RFC 3986中定义
 
@@ -37,7 +37,6 @@ relaxedQueryChars="[,],|,{,},^,&#x5c;,&#x60;,&quot;,&lt;,&gt;"/>
  * 树形的文件下载的代码实现
  */
 public class DownloadListServlet extends HttpServlet {
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 接收参数:
 		String path = request.getParameter("filename");
