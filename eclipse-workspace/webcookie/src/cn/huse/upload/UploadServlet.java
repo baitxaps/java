@@ -19,7 +19,7 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import cn.huse.utils.UploadUtils;
 
 /**
- *  UploadServlet
+ *  UploadServlet 305
  */
 public class UploadServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -31,7 +31,7 @@ public class UploadServlet extends HttpServlet {
 			if(!flag){
 				// enctype属性不是multipart/form-data
 				request.setAttribute("msg", "表单的格式不正确！");
-				request.getRequestDispatcher("/jsp/upload.jsp").forward(request, response);
+				request.getRequestDispatcher("/login/upload.jsp").forward(request, response);
 				return;
 			}
 			// 1.创建磁盘文件项工厂

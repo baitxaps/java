@@ -14,10 +14,11 @@
 	// 1.创建一个队列：
 	Queue<File> queue = new LinkedList<File>();
 	// 2.先将跟节点入队：
-	File root = new File("E://resource");
+	File root = new File("C://baidu");
 	queue.offer(root);
 	// 判断这个队列是否为空，不为空需要进行遍历:
 	while(!queue.isEmpty()){
+		
 		// 将跟节点出队:
 		File file = queue.poll();
 		// 获得跟节点下的所有子节点:
