@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- /JqueryPro/WebContent/js/jquery-1.11.3.js -->
+<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+
+<script type="text/javascript">
+/*  	window.onload=function(){
+ 		alert("hello");
+ 	} */
+// 	$(function() {
+// 		alert("hello");
+// 	});
+ 	
+ 	$(function(){
+		//get the dom obj
+ 	//	var div = document.getElementById("d");
+	//	var jqueryDiv = $("#d");
+		
+		// dom ->jquery
+		// $(div).html("hello jquery");
+		
+		// jquery to dom
+		// jqueryDiv.get(0).innerHTML = "hello jquery...";
+		
+		var html = $("#d1").html();// get the element of html
+		var text = $("#d1").text();// get  text in element of html 
+		
+		$(".d").each(function(i){ // enumtor the d of element
+			$(this).html($(this).html() + "welcome");//this is Dom obj, convert  to jquery obj
+		});
+		
+		var index = $("div").index($("#d1"));// get the d1 of index on div 
+		
+		//var size = $(".d").size();//get count on the .d of class 
+		
+		$(".d,#d1").text("java");// set java on condition is class=d or id = d1
+ 	 });
+ 	
+ 	
+</script>
+</head>
+<body>
+	<div class="d">t1</div>
+	<div class="d">t2</div>
+	<div id="d1">
+		<a>inner2</a>
+	</div>
+	<div>t3</div>
+	<div>t4</div>
+</body>
+</html>
