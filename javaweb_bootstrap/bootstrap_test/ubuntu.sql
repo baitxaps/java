@@ -1,8 +1,40 @@
- 
+Nginx
+Nginx(engine x）是一个高性能的HTTP和反向代理服务器，
+也是一个IMAP/POP3/SMTP服务器。
+Nginx是由Igor Sysoev为俄罗斯访问量第二的Rambler.ru站点开发的
+负载均衡服务器分为两种：
+一种是通过硬件实现的负载均衡服务器，简称硬负载
+另一种是通过软件来实现的负载均衡，简称软负载
+
+Nginx应用场景
+1、http服务器，可以做静态网页的http服务器。
+2、配置虚拟机。
+一个域名可以被多个ip绑定。可以根据域名的不同请求转发给运行在不同端口的服务器。
+3、反向代理，负载均衡。把请求转发给不同的服务器。
+
+正向代理它隐藏了客户端
+反向代理它隐藏是服务器端
+nginx: /usr/sbin/nginx /etc/nginx /usr/share/nginx
+
+4. cmd
+boot: 					nginx 		=>./nginx
+stop(相当于找到nginx进程kill): 			nginx -s stop	=>./nginx -s stop
+quit(等程序执行完毕后关闭，建议使用此命令): 	nginx -s quit
+reload(可以不关闭nginx的情况下更新配置文件): 	nginx -s reload
+ps -ef | grep nginx
+
+ 重启命令：
 1.reboot 
- 2.shutdown -r now 立刻重启
- 3.shutdown -r 10 过10分钟自动重启
- 4.shutdown -r 20:35 在时间为20:35时候重启
+2.shutdown -r now 立刻重启
+3.shutdown -r 10 过10分钟自动重启	
+4.shutdown -r 20:35 在时间为20:35时候重启
+
+关机命令：
+1.halt   立刻关机
+2.poweroff  立刻关机
+3.shutdown -h now 立刻关机(root用户使用)
+4.shutdown -h 10 10分钟后自动关机
+如果是通过shutdown命令设置关机的话，可以用shutdown -c命令取消重启
 
 
 redis-server  redis服务器
