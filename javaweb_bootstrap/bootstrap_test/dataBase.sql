@@ -7,7 +7,7 @@ cmd->services.msc ->mysql ->stop
 //skip grant
 mysqld --skip-grant-tables
 // new cmd window
-mysql -u root -p // no input the password
+mysql -uroot -p // no input the password
 // rename password
 use mysql;
 update user set password = password('123456') where user='root';
