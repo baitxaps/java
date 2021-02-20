@@ -1,0 +1,10 @@
+{
+    "python.pythonPath": "C:\\python3.7.4\\python.exe",
+    "files.associations": {
+        "iostream": "cpp"
+    },
+    "cmake.sourceDirectory": "${workspaceFolder}/.",
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+    "editor.scrollPredominantAxis": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false
+}

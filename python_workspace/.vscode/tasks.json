@@ -1,0 +1,65 @@
+// cd build
+// cmake ..
+// mingw32-make.exe
+{
+  "version": "2.0.0"  ,
+  "options": {
+      "cwd": "${workspaceFolder}/build" // cd build
+  },
+  "tasks": [
+      {
+        "type":"shell",
+        "label":"cmake",
+        "command":"cmake", // cmake ..
+        "args":[
+            ".."
+        ]
+      },
+   {
+       "label": "make",
+       "group": {
+           "kind": "build",
+           "isDefault": true
+       },
+       "command":"mingw32-make.exe", // windows 
+       "args": [
+
+       ]
+   } ,
+   {
+    "label": "Build",
+    "dependsOn":[
+        "cmake",
+        "make"
+    ]
+   },   
+  ]
+}
+
+
+// {
+//     "tasks": [
+//         {
+//             "type": "shell",
+//             "label": "g++",
+//             "command": "g++",
+//             "args": [
+//                 "-g",
+//                 "${file}",
+//                 "-o",
+//                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
+//             ],
+//             "options": {
+//                 "cwd": "${workspaceFolder}"
+//             },
+//             "problemMatcher": [
+//                 "$gcc"
+//             ],
+//             "group": {
+//                 "kind": "build",
+//                 "isDefault": true
+//             }
+//         }
+//     ],
+//     "version": "2.0.0"
+// }
