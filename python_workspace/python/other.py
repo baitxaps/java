@@ -1,4 +1,47 @@
 # -*- coding: UTF-8 -*-
+import os,sys
+#from django.contrib.auth import authenticate as auth
+
+print(__file__) # 打印当前脚本路径
+
+#modulePath = "c:\\Users\\chenhairong\\Desktop\\javaweb\\python_workspace\\python\\module"
+path = os.path.dirname(__file__)
+module_path = path +"\\module"
+#print(module_path)
+sys.path.append(module_path)
+
+import rhc_module
+from package2.pg import pg_module
+
+
+
+
+def module():
+    #pypi.org => 292,634 projects 2,401,871 releases 3,917,057 files 487,227 users
+    #pip3 install python2-secrets
+
+   # rhc_module.say()
+   # print(sys.path)# 打印系统库路径
+
+    # [
+    # 'c:\\Users\\chenhairong\\Desktop\\javaweb\\python_workspace\\python', 
+    # 'C:\\python3.7.4\\python37.zip',
+    #  'C:\\python3.7.4\\DLLs', 
+    #  'C:\\python3.7.4\\lib', 
+    #  'C:\\python3.7.4', 
+    #  'C:\\Users\\chenhairong\\AppData\\Roaming\\Python\\Python37\\site-packages', 
+    #  'C:\\python3.7.4\\lib\\site-packages',
+    # 'C:\\python3.7.4\\lib\\site-packages\\chardet-5.0.0.dev0-py3.7.egg'
+    # ] 
+
+    pass
+   # system("df -h")
+
+module()
+
+
+
+
 def call_back(x):
     return x**2
 
@@ -66,7 +109,7 @@ def innerFunction():
     # evel,exec,compile
         
 
-innerFunction()
+#innerFunction()
 
 def std_register(name,age,*args,**kwargs):#args ->array,kwargs-> dict
     print(name,age,args,args[0],kwargs)
