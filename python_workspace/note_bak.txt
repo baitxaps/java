@@ -18,7 +18,7 @@ nginx: /usr/sbin/nginx /etc/nginx /usr/share/nginx
 
 4. cmd
 boot: 					nginx 		=>./nginx
-停止(相当于找到nginx进程kill): 			nginx -s 停止	=>./nginx -s 停止
+stop(相当于找到nginx进程kill): 			nginx -s stop	=>./nginx -s stop
 quit(等程序执行完毕后关闭，建议使用此命令): 	nginx -s quit
 reload(可以不关闭nginx的情况下更新配置文件): 	nginx -s reload
 ps -ef | grep nginx
@@ -80,7 +80,7 @@ sudo passwd root
 9. alt+E :show menu
 
 //10. 关闭防火墙
-service iptables 停止
+service iptables stop
 
 vi；:/keyword for search
 

@@ -1,3 +1,13 @@
+swift -OC 运行时
+纺译原理：启动优化，缩小安装包
+各种原理：明白，二制制重排，常用算法
+https://time.geekbang.org/column/article/85331
+https://github.com/ming1016
+https://52doc.com/detail/78920
+https://www.jianshu.com/p/92690a240fce
+http://sharing-pdf.jscinmark.ru/zh-CN/download_file_sharing/
+gen_dai_ming_xue_iosbian_cheng_li_shun_he_xin_zhi_shi_dian__21562_zip?language=zh-CN
+
 Nginx
 Nginx(engine x）是一个高性能的HTTP和反向代理服务器，
 也是一个IMAP/POP3/SMTP服务器。

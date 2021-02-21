@@ -30,7 +30,7 @@ print(f'''success replace the string '{old_str}'  to '{new_str}',count: {old_str
 #python file_replace.py  停止  stop note_bak.txt  
 
 def test():
-    f=open("报名照片.jpg","rb")
+    f=open("Annotation.png","rb")
     for line in f:
         print(line)
     f.close()
