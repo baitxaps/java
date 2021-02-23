@@ -8,7 +8,8 @@ https://www.jianshu.com/p/92690a240fce
 http://sharing-pdf.jscinmark.ru/zh-CN/download_file_sharing/
 gen_dai_ming_xue_iosbian_cheng_li_shun_he_xin_zhi_shi_dian__21562_zip?language=zh-CN
 
-Windows + Shift + S
+截屏:Windows + Shift + S 
+微软拼音输入法切换简繁体：按ctrl+shift+f
 
 Nginx
 Nginx(engine x）是一个高性能的HTTP和反向代理服务器，

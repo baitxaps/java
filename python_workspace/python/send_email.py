@@ -14,7 +14,7 @@ def html_mail_image():
     #login
     smtp_obj = smtplib.SMTP_SSL("smtp.qq.com",465)
     smtp_obj.login("hnchenhairong2008@qq.com","fbcdcwapmjtkbicd")
-    smtp_obj.set_debuglevel(1) #show debug info
+    smtp_obj.set_debuglevel(1) # debug info
 
     mail_body='''
     <h5>hello</h5>

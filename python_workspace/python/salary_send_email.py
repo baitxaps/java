@@ -13,6 +13,7 @@ smtp_obj.login("hnchenhairong2008@qq.com","fbcdcwapmjtkbicd")
 
 table_format=f'''
 <html>
+<head></head>
 <body>
 <table border ="1px solid black">
     <thead>
