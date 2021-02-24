@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c3p0-config>
+
+    <default-config>
+        <property name="driverClass">com.mysql.jdbc.Driver</property>
+        <property name="jdbcUrl">jdbc:mysql:///web_data</property>
+        <property name="user">root</property>
+        <property name="password">123456</property>
+    </default-config>
+    
+    <named-config name="oracle">
+        <property name="driverClass">com.mysql.jdbc.Driver</property>
+        <property name="jdbcUrl">jdbc:mysql://localhost:3306/web_data?characterEncoding=utf8</property>
+        <property name="user">root</property>
+        <property name="password">123456</property>
+        <property name="initialPoolSize">5</property>
+        <property name="maxPoolSize">10</property>
+        <property name="checkoutTimeout">30000</property>
+    </named-config>
+</c3p0-config>
+
+<!--https://www.cnblogs.com/qqwhsj/p/10769874.html-->
+<!--1.在xml中<>,&具有各自的意思，所以需要转义字符，如 &：&amp；-->
+<!--2.mysql8.0的连接包需要使用C3p0的最新的包0.9.5.2-->
+<!--3.另外就是你的driverClass写出driverclass，或者说url，driver，user，password出错。-->
+<!--4.上述几种情况网上出现最多，也最常见。我的问题就是这个很容易忽略的问题，
+就是C3p0的xml文件必须放置在src文件夹中，甚至不可以在src的包中。-->
+
+
+  <!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<!DOCTYPE server>-->
+<!--<server>-->
+    <!--<mbean code="com.mchange.v2.c3p0.mbean.C3P0PooledDataSource"-->
+           <!--name="jboss:service=C3P0PooledDataSource">-->
+        <!--<attribute name="JndiName">java:PooledDS</attribute>-->
+        <!--<attribute name="JdbcUrl">jdbc:mysql:///web_events</attribute>-->
+        <!--<attribute name="DriverClass">com.mysql.jdbc.Driver</attribute>-->
+        <!--<attribute name="User">root</attribute>-->
+        <!--<attribute name="Password">123456</attribute>-->
+
+        <!--&lt;!&ndash; Uncomment and set any of the optional parameters below &ndash;&gt;-->
+        <!--&lt;!&ndash; See c3p0's docs for more info.                         &ndash;&gt;-->
+
+        <!--&lt;!&ndash; <attribute name="AcquireIncrement">3</attribute>                     &ndash;&gt;-->
+        <!--&lt;!&ndash; <attribute name="AcquireRetryAttempts">30</attribute>                &ndash;&gt;-->
+        <!--&lt;!&ndash; <attribute name="AcquireRetryDelay">1000</attribute>                 &ndash;&gt;-->
+        <!--&lt;!&ndash; <attribute name="AutoCommitOnClose">false</attribute>                &ndash;&gt;-->
+        <!--&lt;!&ndash; <attribute name="AutomaticTestTable"></attribute>                    &ndash;&gt;-->
+        <!--&lt;!&ndash; <attribute name="BreakAfterAcquireFailure">false</attribute>         &ndash;&gt;-->
+        <!--&lt;!&ndash; <attribute name="CheckoutTimeout">0</attribute>                      &ndash;&gt;-->
+        <!--&lt;!&ndash; <attribute name="ConnectionTesterClassName">0</attribute>            &ndash;&gt;-->
+        <!--&lt;!&ndash; <attribute name="Description">A pooled c3p0 DataSource</attribute>   &ndash;&gt;-->
+        <!--&lt;!&ndash; <attribute name="FactoryClassLocation"></attribute>                  &ndash;&gt;-->
+        <!--&lt;!&ndash; <attribute name="ForceIgnoreUnresolvedTransactions">true</attribute> &ndash;&gt;-->
+        <!--&lt;!&ndash; <attribute name="IdleConnectionTestPeriod">-1</attribute>            &ndash;&gt;-->
+        <!--&lt;!&ndash; <attribute name="InitialPoolSize">3</attribute>                      &ndash;&gt;-->
+        <!--&lt;!&ndash; <attribute name="MaxIdleTime">0</attribute>                          &ndash;&gt;-->
+        <!--&lt;!&ndash; <attribute name="MaxPoolSize">15</attribute>                         &ndash;&gt;-->
+        <!--&lt;!&ndash; <attribute name="MaxStatements">0</attribute>                        &ndash;&gt;-->
+        <!--&lt;!&ndash; <attribute name="MaxStatementsPerConnection">0</attribute>           &ndash;&gt;-->
+        <!--&lt;!&ndash; <attribute name="MinPoolSize">0</attribute>                          &ndash;&gt;-->
+        <!--&lt;!&ndash; <attribute name="NumHelperThreads">3</attribute>                     &ndash;&gt;-->
+        <!--&lt;!&ndash; <attribute name="PreferredTestQuery"></attribute>                    &ndash;&gt;-->
+        <!--&lt;!&ndash; <attribute name="TestConnectionOnCheckin">false</attribute>          &ndash;&gt;-->
+        <!--&lt;!&ndash; <attribute name="TestConnectionOnCheckout">false</attribute>         &ndash;&gt;-->
+        <!--&lt;!&ndash; <attribute name="UsesTraditionalReflectiveProxies">false</attribute> &ndash;&gt;-->
+        <!--<depends>jboss:service=Naming</depends>-->
+    <!--</mbean>-->
+<!--</server>-->
+
+

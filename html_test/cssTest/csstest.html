@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<!---style--->
+		<style>
+			span{<!--lable name-->
+				font-size:30px;
+				color:red;
+				border:2px solid blue;
+				background-color: #001122;
+				width: 300px;
+				height: 200px;
+			    <!--float: left;-->
+			}
+			.blackClass{/*class name*/
+				color:black;
+			}
+			.redClass{
+				color: green
+			}
+			#id1{<!-- /*id name*/ -->
+				color: aqua;
+				display: inline;
+			}
+			
+			div font { <!-- level name -->
+				color: red;
+			}
+		
+		
+		<!-- 	块元素：会自动换行 :h1,p,div,ul
+			行内元素：根据内容多少来占用行内空间，不会自动换行：span,a
+			display属性可以使得元素在行内元素和块元素之间相互转换
+			display:block,inline,none -->
+			
+		</style>
+		<!-- /*style out*/ -->
+		<link rel="stylesheet" type="text/css" href="cssTest.css"/>
+		
+<!-- 		/*script
+		ECMAScript:核心，规定了JS的语法和基本对象
+		DOM:文档对象模型，处理网页内容的对方法和接口
+		BOM:浏览器对象模型，与浏览器交互的方法和接口
+		放在body结束标签前
+		*/ -->
+		
+		<!-- <script src="csstest.js"></script> -->
+		
+	</head>
+	<body onload">
+	<!-- <body onload="showDialog()"> -->
+		<span>testsss</span>
+		<span id="s1" class="redClass">classname</span>
+		<div class="blackClass"> div1:blackColor</div>
+		<div id="id1"> id indeticial </div>
+		<div>
+			<font>i wnat to change red color</font>
+			i want to keep black color
+		</div>
+		<font>i keep to block color</font>
+		
+		<a>a1</a>
+		<a>a2</a>
+		<a>a3</a>
+		
+		<input type="text" id = "t1" value="hello" onclick="params(this),showDialog()"/>
+		<input type="checkbox" id="hobby" />
+		<span id="s1"> today is suning </span>
+		
+		<!--
+		事件句柄绑定方式：
+		优：开发快捷，传参方便，可以绑定多个函数
+		缺：js和HTML代码高度糅合在一起，不利于多部门的项目开发维护
+		
+		0.onclick, 
+		1.onfocus 
+		2.onblur 失去焦点
+		3.onchange 
+		4.onload 加载完成时 
+		5.onsubmit !!! 表单提交触发,常用于表单校验,true:充许表单提交 false:阻止表单提交
+		6.onkeyup 键位弹起事件
+		7.onmouseover 鼠标移入事件 ,onmouseout 鼠标移出事件
+		
+		DOM绑定方式
+		 window.onload=showDialog;
+		优：不能传递参数，解决：匿名函数是可以的
+		缺：一个事件只能绑定一个函数，解决：匿名函数内部是可以绑定多个函数	
+		
+		-->
+		
+		<input type="button" value="show" onclick="showDialog()" />
+		<select onchange="showDialog()">
+			<option value="bj"> beijing</option>
+			<option value='sh'>shanghai</option>
+			<option value='gz'>guangzhou</option>
+		</select>
+		
+		<form onsubmit="return showDialog()">
+			<input type="text" name="uname" /> <br/>
+			<input type="submit" value="done" />
+		</form>
+	
+		<script>
+			// value
+			var t1 = document.getElementById("t1");
+			t1.value="hehe";//修改元素值
+			
+			// className
+			var s1 = document.getElementById("s1");
+			// className 修改元素样式
+			s1.className = "redClass";
+			
+			// checked
+			var c = document.getElementById("hobby");
+			c.checked=true;
+			
+			// innerHTML 设置标签的内容体
+			var htm =document.getElementById("s1");
+			htm.innerHTML="bad weather";
+			htm.innerHTML+=" 0  Degree"
+			
+			function showDialog() {
+				alert("show");
+				return true;
+			}
+			
+			function params(obj) {
+				alert(obj);
+			}
+			
+			// DOM binding
+			//window.onload=showDialog;
+			window.onload=function(){
+				var t1 = document.getElementById("t1");
+				t1.onclick=function(){
+					params(this);
+					showDialog();
+				}
+			}
+			
+		</script>
+		
+		<!-- <script src="csstest.js"></script> -->
+	</body>
+</html>

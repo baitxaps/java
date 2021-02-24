@@ -1,0 +1,215 @@
+// Arrays
+//public static<T> list<T> asList(T... a) :no add and delete,can modify
+//public static<E> list<E> of(E... elements) : no add ,no delete,no modify
+//public static <E> Set<E> of(E... elements):  no add and delete  ,no modify method
+
+// 辅助 208
+// 1. psvm ->main()
+// 2. sout -> printf()
+// 3. ctrl+alt+space() ->tips
+
+//快捷键
+// ctrl+/             -> //
+// ctrl+shift+/       -> /**/
+// ctrl+alt +l        -> format
+// ctrl +d            -> copy line
+// ctrl +y            -> delete line
+// ctrl +B            -> see the source code
+// alt+shift+enter     -> import package
+// ctrl + n            -> search the class(file)
+
+// alt + 7             -> show the class  structure info
+// or menu: view->Tool windows->Structure   -> show the class structure info
+
+//导包
+// alt+enter    -> auto to add the padkage
+// ctrl+ alt+ V ->   the var name receive type
+
+// win: alt +Insert  -> 生成构造方法，get  set
+// mac：cmd +n
+
+//IDEA中三种快速实现接口的快捷键:
+ctrl+0,ctrl+l,alt+enter
+
+
+// 继承中：私有不能被继承，子类中的访问权限可 >= 父类访问权限（public>default>private）
+// 静态成员方法只能访问静态成员（相当于类方法 - 实例方法区别）
+// 自动建包命令：javac -d . com.huse.cn test.java
+// 运行：java com.huse.cn test
+
+// 权限修饰符
+//修饰符      同一个类中    同一个包中子类无关类   不同包中子类    不同包的无关类
+//private      true
+//默认          true           true
+//protected    true           true              true
+//public       true           true              true            true
+
+// 多态
+//  成员变量：编译看左边，执行看边边
+//  成员方法：编译看左边，执行看右边
+//  因为成员方法有重写，而成员变量没有
+
+// 接口
+// 成员变量：是常量 默认修饰符：public static final
+// 构造方法：没有构造方法因为接口主要是对行为进行抽象的，是没有具体存在的
+// 一个类如果没有父类，默认继承自object类
+// 成员方法：只能是抽象方法，默认修饰符：public abstract
+
+// 类和接口关系：可以单实现，多实现，还可以在继承一个类的同时实现多个接口
+// 接口和接口的关系:可以单继承，也可以多继承
+// => 设计区别：抽象类对类进行抽像 包括属性和行为抽象,接口对行为抽象，主要是行为
+
+// 匿名内部类
+// 本质：是一个继承了该类或实现了该接口的子类匿名对象
+// 工具类的设计思想：构造方法用private修饰，成员用public static修饰
+
+// throws className
+
+// hashset ：自定义类，存入hashset,要重写hashCode() and equals()
+// 自然排序Comparable:
+//用TreeSet集合存储自定义对象，无参构造方法使用的的自然排序对元素排序的
+//自然排序，就是让元素所属的类实现Comparable接口，重写Comparable(To)方法
+//重写方法时，一定要注意排序规则必须按照要求的主要条件和次要条件来写
+
+url=jdbc:mysql://localhost:3306/web_data
+url=jdbc:mysql://localhost:3306/batch?rewriteBatchedStatements=true
+https://segmentfault.com/a/1190000020600546?utm_source=tag-newest
+
+// never used提示
+https://blog.csdn.net/chenchunlin526/article/details/86263457
+//去掉错误拼写检查提示
+//spelling
+
+//web server:
+Tomcat,webSphere,webLogic,IIS,Apache
+Tomcat		：Apache组织提供的一个开源的免费的web服务器。满足EE的Serlet和JSP的规范。
+WebSphere	：IBM公司开发的一个收费的大型web服务器。满足了EE开发的所有规范。
+WebLogic	：BEA公司开发的一个收费的大型web服务器。满足了EE开发的所有规范。
+IIS			：应用在.NET平台上。
+Apache		：应用在PHP平台上。
+
+静态web资源:HTML/CSS/JS
+动态web资源:Servlet、JSP、PHP、ASP
+
+path:C:\Program Files\Apache Software Foundation\Tomcat 7.0\bin
+动态WEB资源目录结构
+website
+	|------静态页面（HTML、CSS、JS、图片）
+	|------JSP页面
+	|------WEB-INF
+			|-----web.xml	（必须的）
+			|-----classes	（可选的）
+			|-----lib		（可选的）
+
+Tomcat项目发布的方式
+1：直接将项目复制到tomcat/webapps下; =>http://localhost:8080/test/index.html
+
+2：在tomcat/conf/server.xml配置tomcat的虚拟路径
+path:C:\Program Files\Apache Software Foundation\Tomcat 7.0\conf/server.xml->
+<Context path="/rhc" docBase ="C:\web_page"></Context>
+
+
+3：在tomcat/conf/Catalina/localhost/下配置tomcat的虚拟路径  =>better.
+path: C:\Program Files\Apache Software Foundation\Tomcat 7.0\conf\Catalina\localhost\huse.xml
+
+huse.xml:
+<?xml version='1.0' encoding='utf-8'?>
+<Context docBase ="C:\web_page"></Context>
+
+access url:
+http://localhost:8080/huse/
+
+
+////////////////////////////////////////////////////////////////////////////////////////
+//中端配置型
+////////////////////////////////////////////////////////////////////////////////////////
+CPU：INTEL I5 9600K/KF    //1699
+散热：采融B81  //399
+主板：技嘉Z390 GAMING X  //1098
+内存：金士顿predatro 3200 8G*2   //659
+显卡：蓝宝石VEGA56(//1210)或VEGA64，可降低档次选择蓝宝石590，也可直接上更好的5700XT
+固态硬盘：三星860EVO 250G  //459
+电源：海韵金牌全模组 550W（注意计算下功率，留出余量）//599
+机箱：看电商活动价格及个人喜好(推荐中塔或全塔机箱)//499
+显示器: 飞利浦 27英寸 4K LGD-IPS  //2999
+// 9621
+
+
+CPU：intel i9-10900K 酷睿十核  		 ->2939
+主板：华硕 ROG MAXIMUS XII EXTREME 		 ->4299.00
+内存：芝奇皇家戟 3600频率 DDR4 内存条16GX4 	->￥3299.00
+硬盘：三星 970 PRO 1TB SSD固态硬盘 M.2接口（黑苹果系统盘）
+硬盘： 美商海盗船Force MP600 1TB SSD固态硬盘 PCI-E 4.0（Win10系统盘）
+电源：美商海盗船RM1000X 金牌/全模组电源
+显卡：华硕 ROG-STRIX-RX5700XT-O8G-GAMING OC
+散热：美商海盗船 H150i RGB PRO XT 水冷CPU散热器
+机箱：LIANLI 包豪斯-O11 黑色
+
+////////////////////////////////////////////////////////////////////////////////////////
+//高端配置型 2021台式机黑苹果完美电脑配置推荐，
+////////////////////////////////////////////////////////////////////////////////////////
+
+顶级旗舰配置型（截止2020年10月，大部分国内外黑果博主都是10900K上位）：
+CPU：INTEL I9 10900K ｜ 10700K ｜ 10600K 均可，不想后期升级就10900K一步到位。//2939
+散热：自选，风冷上8热管双塔，水冷则360及更高端的冷排 //255
+主板：技嘉Gigabyte Z490 AORUS （或华硕 Z490高端主板）//1669
+内存：16G x4（优先上容量，其次看频率，品牌自选，如果CPU风冷，内存可能需要矮条）
+显卡：蓝宝石RX 5700XT		//1699
+固态硬盘：三星970PRO 1T   //1999
+电源：海盗船或海韵 850W以上的金牌全模组电源吧（继续要自己计算）//1099
+机箱：看电商活动价格及个人喜好(推荐全塔机箱) //459
+显示器：飞利浦 27英寸 4K LGD-IPS  //2999
+all:10
+
+适用安装黑苹果系统的组装机配置表
+万事开头难，但选一个适合安装黑苹果的台式机电脑配置真不难。
+首先确认你的预算，大概需求，从CPU选购开始，就可以了。本文提及都是2020到2021年主流的配置，不包含一些二手或者老旧的硬件。首先确认一个大致的方向。
+
+CPU
+INTEL 9代或者10代，安装黑苹果强烈建议带核显的型号，
+如i7-10700，i5 9400，i9 9900K，i5 9500，i3 9100，i9 10900K，
+i7 9700K，i5 10400，i7 9700，i7 10700K，i5 10500，i9 10850K，
+i9 10850K，i5 10600K，i5 9600K，i9 9900KS，不要选购赛扬，奔腾。
+
+内存
+内存基本没有特别要求，可以搭配CPU和主板的就行。
+
+主板
+主板没有太多的要求，仍建议选择一线大厂的品牌，如华硕，技嘉，微星等，
+根据所选的CPU来搭配主板。如300系和400系。老吴比较推荐微星，
+因为在BIOS中可以直接关闭CFG LOCK，这个对于开启CPU原生电源管理非常有用。
+
+显卡
+NVIDIA独显不建议，GTX1080及以下仅支持10.13.6系统，RTX以上不支持，不能安装黑苹果！！
+强烈建议AMD独显：
+Rx 460/560 Rx 470/570 Rx 480/580 Rx 590 Rx Vega 56 Rx Vega 64 Rx Vega VII / RX 
+560 XT/ RX 5500 5600 5700 XT
+不要XFX讯景品牌，RX 580需要满血版，也就是2304SP的,RX 590不能是GME版（580的马甲版）
+尽量使用dp接口
+硬盘
+三星的pm981 PM981A(mzlvb开头)这个绝对不能选！970 evo plus需要升级最新的固件，
+其它未发现问题，但三星的固态尽量不选，因为黑苹果支持得不好，速度也不会快。
+镁光2200S s2200反正有2200标志的，都不能安装黑苹果！！其它的未发现问题，
+但为了保险，镁光的都不要选。
+PLEXTOR(浦科特)的全系都尽量不考虑，个别出错的机率太高！
+某些国产的品牌，如tigo，个别型号安装不了。
+
+东芝的KBG30ZMS前缀的固态，128G到512GB的无法安装。
+国产的品牌，目前我只发现tigo有几款不能安装，其它的都还比较兼容，比起大厂品牌更容易安装黑苹果。
+我比较推荐金士顿，西数，海康，雷克沙这些，当然优惠点的就选国产品牌吧。
+关于NVME和SATA接口，NVME肯定要快一些的，但兼容性肯定SATA要好。
+
+有线网卡，声卡
+现主板集成的，绝大多数没问题，可以完美驱动，不用考虑
+
+无线网卡，蓝牙
+如果有免驱无线网卡需求的，建议看老吴的：黑苹果无线网卡选购指南
+http://k61.org/a7f5fe4a.html
+如果需要用USB接口的，某宝搜：黑苹果无线网卡USB就可以了，
+20元一个就能搞掂，方便，但速度兼容性一般，只能WIFI用用。
+
+显示器
+推荐2K或者4K以上的，才能更好体验苹果MACOS系统
+
+具体到价格的配置表就不放了，你可以根据预算，先从CPU选起，
+然后根据上面的提示，一般安装黑苹果都会有问题，带核显的CPU能更好地发挥黑苹果的性能。
