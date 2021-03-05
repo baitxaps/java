@@ -1,4 +1,24 @@
 {
+    "code-runner.executorMap": {
+        "bash": "C:\\Program Files\\Git\\bin\\bash.exe",
+        //"javascript": "node",
+        //"php": "D:\\BtSoft\\php\\73\\php.exe",
+        // "python": "python",
+        //"perl": "perl",
+        // "ruby": "C:\\Ruby23-x64\\bin\\ruby.exe",
+        // "go": "go run",
+        // "html": "\"C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe\"",
+        // http"java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
+        // "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
+    },
+    "code-runner.languageIdToFileExtensionMap": {
+        "bat": ".bat",
+        "powershell": ".ps1",
+        "typescript": ".ts",
+        "bash": ".sh",
+        "/bin/bash": ".sh"
+    },
+    //"code-runner.runInTerminal": true,
     "python.pythonPath": "C:\\python3.7.4\\python.exe",
     "files.associations": {
         "iostream": "cpp"

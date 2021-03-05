@@ -13,18 +13,18 @@
         },
 
         {
-            "name": "g++.exe - 生成和调试活动文件",
-            "type": "cppdbg",
-            "request": "launch",
+            "name": "g++.exe - 生成和调试活动文件",//  强制：就一个名字而已，但是是必须要有的
+            "type": "cppdbg",// 强制：调试器的类型
+            "request": "launch",//强制：launch/attach
          // "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
-           "program": "${workspaceFolder}/build/my_ckake_swap.exe",
-            "args": [],
+           "program": "${workspaceFolder}/build/my_ckake_swap.exe",// 可执行文件的路径，需修改
+            "args": [],//  调试器的位置，
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
-            "environment": [],
+            "cwd": "${workspaceFolder}",//  当前工作目录
+            "environment": [], //  当前项目环境变量
             "externalConsole": false,
-            "MIMode": "gdb",
-            "miDebuggerPath": "gdb.exe",
+            "MIMode": "gdb",//  调试器模式/类型
+            "miDebuggerPath": "gdb.exe",//  调试器的位置，
             "setupCommands": [
                 {
                     "description": "为 gdb 启用整齐打印",
@@ -36,3 +36,26 @@
         }
     ]
 }
+
+/*
+0.
+${workspaceFolder} :表示当前workspace文件夹路径，如C:\Users\admin\Desktop\test
+${workspaceRootFolderName}:表示workspace的文件夹名，如test
+${file}:文件自身的绝对路径，如C:\Users\admin\Desktop\test\.vscode\launch.json
+${relativeFile}:文件在workspace中的路径，如.vscode\launch.json
+${fileBasenameNoExtension}:当前文件的文件名，不带后缀，如hello/launch
+${fileBasename}:当前文件的文件名，如 hello.cpp/launch.json等
+${fileDirname}:文件所在的文件夹路径，也即C:\Users\admin\Desktop\test\.vscode
+${fileExtname}:当前文件的后缀，也即.json
+${lineNumber}:当前文件光标所在的行号
+${env:PATH}:系统中的环境变量
+*/
+
+//1 在当前文件上是c++的情况下，tasks可以用来做编译，
+// 而launch用来执行编译好的文件
+
+//2.tasks用于在launch前执行任务，launch用于读取执行文件
+// tasks.json文件关联起来，用于在调试前完成build）任务
+
+//3.要想从vscode中构建应用程序，必须要生成一个tasks.json文件。
+//生成时，需要指定编译器
