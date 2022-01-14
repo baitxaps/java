@@ -62,7 +62,7 @@ def module():
    # rhc_module.say()
    # print(sys.path)# 打印系统库路径
    # system("df -h")
-module()
+#module()
 
 
 
@@ -139,10 +139,15 @@ def innerFunction():
 def std_register(name,age,*args,**kwargs):#args ->array,kwargs-> dict
     print(name,age,args,args[0],kwargs)
     print(kwargs.get("addr"))
+  
+
     return name,True,age,args,kwargs
 
-#stringOperatorarray = std_register("a",22,"M","Girl",addr="guangzhou",hometown="hunan")
-#print(array)
+# ars = std_register("a",22,"M","Girl",addr="guangzhou",hometown="hunan")
+# print(ars)
+# a = [1,3,4,6]
+# a=[i**i for i in a]
+# print(a)
 
 # 常用字符串操作
 def stringOperator():
@@ -158,5 +163,5 @@ def stringOperator():
     #print(a)
     print(a.strip().split("l")) # strip() =>delete the \n
 
-
+# build-in > global > enclose > local
 #stringOperator()    

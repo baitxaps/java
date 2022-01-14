@@ -1,3 +1,91 @@
+CentOS 7 64 :root/0000  admin/0000
+Ubuntu 64 :rhc/123456
+
+https://www.docin.com/p-318886438.html
+
+程序员技术练级攻略
+https://coolshell.cn/articles/4990.html
+
+https://blog.csdn.net/HelloEarth_/article/details/104621246
+下半年考试日期为11月6、7日
+
+快速排序
+https://blog.csdn.net/chengqiaoyahaixuyush/article/details/38273893
+
+https://www.runoob.com/linux/linux-vim.html
+
+//mac:
+./configure --prefix=/usr/local/ffmpeg --enable-dubug=3
+make -j 4
+make install
+
+// windows:
+Cygwin(Cygnus Windows)
+MinGW(Minimalist GNU for Windows)
+VS(Visual Studio 2015/2017)
+MSYS2(Minimal SYstem 2)
+
+
+
+vs2015=>QT5.9
+qt-vsaddin-msvc2015-2.2.1vsix
+
+vs2015企业版KEY：
+HM6NR-QXX7C-DFW2Y-8B82K-WTYJV
+
+
+
+
+413, DBS
+15,Software design
+
+ubantu 64:(account:rhc  pwd:123456)
+
+git clone https://git.ffmpeg.org/ffmpeg.git
+libavfilter：音视频后期处理
+libavdevice: 音视频设备做处理，音视频采集
+libavresample:音频重采样, 移植过来的库，用的较少
+libswresample:对音频的操作
+libswscale:对视频的操作
+
+./configure --list-decoders
+./configure --list-encoders
+
+./configure --prefix=/usr/local/ffmpeg --enable-gpl --enable-nonfree
+--enable-debug --disable-optimizations --enable-libspeex
+--enable-videotoolbox --enable-shared --enable-pthreds
+--enable-version3 --enable-hardcoded-tables
+--cc=clang --host-cflags=--host-ldflags=
+
+make && make install
+ffprobe:多媒体侦测
+exec:
+/usr/local/ffmpeg/bin/ffmpeg
+
+vi ~/.bash_profile:
+unset PKG_CONFIG_PATH
+export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig:/usr/lib/pkgconfig:/usr/local
+/SDL2/lib/pkgconfig:/usr/local/ffmpeg/lib/pkgconfig
+export PATH=$PATH:/usr/local/ffmpeg/bin
+
+ffmpeg命令分类：
+1、基本信息查询命令：裁剪与合并命令
+2、录制命令：图片/视频互转命令
+3、分解/复用命令：直播相关命令
+4、处理原始数据命令：各种滤镜命令
+
+
+
+1.音视频基础+ffmpeg原理+项目实战 一课完成音视频技术开发入门(实战 入门￥288.00)
+(编程必备基础-音视频小白系统入门课普适所有方向程序员，系统补足你缺乏的音视频基础知识)
+
+2.经典再升级-FFmpeg音视频核心技术全面精讲+实战
+3.WebRTC实时互动直播技术入门与实战 5G时代必备技能
+4.百万级高并发WebRTC流媒体服务器设计与开发(实战 高级 ￥366.00)
+5.OpenCV入门到进阶：实战三大典型项目(车辆检测/人脸识别+图像拼接+文字识别)
+6小时玩转音视频编辑与特效
+
+
 swift -OC 运行时
 纺译原理：启动优化，缩小安装包
 各种原理：明白，二制制重排，常用算法
@@ -80,6 +168,24 @@ sudo passwd root
 重新输入命令：su root
 
 
+【第一章 操作系统概述】(https://blog.csdn.net/weixin_44075132/article/details/116407566)
+【第二章 进程管理】(https://blog.csdn.net/weixin_44075132/article/details/116431430)
+【第二章 进程同步和互斥】(https://blog.csdn.net/weixin_44075132/article/details/116503739)
+【第二章 死锁】(https://blog.csdn.net/weixin_44075132/article/details/116544068?spm=1001.2014.3001.5501)
+【第三章 内存管理】(https://blog.csdn.net/weixin_44075132/article/details/115981474)
+【第四章 文件管理 】(https://blog.csdn.net/weixin_44075132/article/details/116135650)
+【第五章 磁盘管理】(https://blog.csdn.net/weixin_44075132/article/details/116205733)
+【第六章 设备管理 】(https://blog.csdn.net/weixin_44075132/article/details/116247358)
+
+将内存空间分为一个个大小相等的分区( 比如:每个分区4KB)，
+每个分区就是一个“页框”，或称“页帧”、“内存块”、“物理块”。
+每个页框有一个编号，即“页框号”(或者“内存块号”、“页帧号”、“物理块号”)页框号从0开始
+将用户进程的地址空间也分为与页框大小相等的一个个区域，称为“页”或“页面”。每个页面也有一个编号，即‘页号”,页号也是从0开始。
+(注:进程的最后一个页面可能没有一个页框那么大。因此，页框不能太大，否则可能产生过大的内部碎片)
+各个页面不必连续存放，也不必按先后顺序来，可以放到不相邻的各个页框中。
+
+
+
 8. vi /usr/local/redis/redis.conf
 //8. 1.local host
 ./bin/redis-cli -a admin 
@@ -104,3 +210,32 @@ kill -9 id
 
 //11.vi redis.conf
 /requirepass 
+
+//12.
+#if defined(WIN32) && !defined(__MINGW32__) && !defined(__CYGWIN__)
+#      define CONFIG_WIN32
+#endif
+#if defined(WIN32) && !defined(__MINGW32__) && !defined(__CYGWIN__) && !defined(EMULATE_INTTYPES)
+#      define EMULATE_INTTYPES
+#endif
+#ifndef EMULATE_INTTYPES
+#     include <inttypes.h>
+#else
+      typedef signed char    int8_t;
+      typedef signed short int16_t;
+      typedef signed int     int32_t;
+      typedef unsigned char    uint8_t;
+      typedef unsigned short uint16_t;
+      typedef unsigned int     uint32_t;
+#     ifdef CONFIG_WIN32
+          typedef signed __int64     int64_t;
+          typedef unsigned __int64 uint64_t;
+#     else /* other OS */
+          typedef signed long long     int64_t;
+          typedef unsigned long long uint64_t;
+#     endif /* other OS */
+#endif /* EMULATE_INTTYPES */
+
+解决办法：
+项目——属性——C/C++——预处理器——预处理器定义——右侧下拉框中
+“编辑”——在第一个编辑框中添加_CRT_SECURE_NO_WARNINGS——大功告成
